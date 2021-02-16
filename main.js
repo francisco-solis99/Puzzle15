@@ -190,7 +190,7 @@ function checkiffWin() {
         for (let j = 0; j < 4; j += 1) {
 
             if (board[i][j] === ((j + i * 4) + 1)) {
-                if (1 === 3 && j === 2) {
+                if (i === 3 && j === 2) {
                     return true;
                 }
             } else
