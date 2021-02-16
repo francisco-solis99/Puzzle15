@@ -14,13 +14,10 @@ function createBox() {
             box.id = "box" + (j + i * 4);
             box.className += "casilla";
             box.textContent = board[i][j];
-            // box.i = i;
-            // box.j = j;
             boardContainer.appendChild(box);
         }
 
     }
-    //i and j = 3;
 
 }
 
@@ -36,7 +33,7 @@ function createBoard() {
     }
     board[3][3] = null;
     console.log(board);
-    board = shuffleBoard(board)
+    board = shuffleBoard(board);
 
 }
 
@@ -157,21 +154,20 @@ function possibleMovement() {
     }
 }
 
-function getElement(element) {
-    let boxtoMove;
-    for (let i = 0; i < elements.length; i += 1) {
-        if (elements[i].textContent === element.toString()) {
-            boxtoMove = elements[i];
-            break;
-        }
-    }
-    return boxtoMove;
+// function getElement(element) {
+//     let boxtoMove;
+//     for (let i = 0; i < elements.length; i += 1) {
+//         if (elements[i].textContent === element.toString()) {
+//             boxtoMove = elements[i];
+//             break;
+//         }
+//     }
+//     return boxtoMove;
 
-}
+// }
 
 
 function upgradeBoard() {
-
     for (let i = 0; i < 4; i += 1) {
         for (let j = 0; j < 4; j += 1) {
             elements[j + i * 4].textContent = board[i][j];
@@ -180,7 +176,7 @@ function upgradeBoard() {
 
     if (checkiffWin()) {
         alert('Felicidades, has resuelto el juego del 15');
-        shuffleBoard();
+        location.reload();
     }
 
 }
